@@ -13,7 +13,7 @@ import { Label } from "../components/ui/label"
 import { Input } from "../components/ui/input"
 
 export default function CartPage() {
-  const { cart, totalPrice, clearCart } = useCart()
+  const { cart, totalPrice } = useCart()
   const { toast } = useToast()
   const { user } = useAuth()
   const navigate = useNavigate()

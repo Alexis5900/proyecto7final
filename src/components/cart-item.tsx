@@ -7,7 +7,7 @@ import { useCart } from "../context/CartContext"
 
 type CartItemProps = {
   item: {
-    id: number
+    id: string
     name: string
     price: number
     image: string

@@ -35,11 +35,6 @@ export default function ProfilePage() {
   const [phone, setPhone] = useState(user?.phone ?? "")
   const [address, setAddress] = useState(user?.address ?? "")
 
-  const validateEmail = (email: string) => {
-    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-    return re.test(email)
-  }
-
   const handleProfileUpdate = async (e: React.FormEvent) => {
     e.preventDefault()
     setError("")
