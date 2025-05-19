@@ -4,6 +4,21 @@ Este proyecto es el frontend de una aplicación fullstack de eCommerce para una 
 
 ---
 
+## 🌐 Enlaces rápidos
+
+### 🚀 **Frontend**
+- **GitHub:** [proyecto7final (frontend)](https://github.com/Alexis5900/proyecto7final)
+- **Render (producción):** [https://proyecto7final.onrender.com/](https://proyecto7final.onrender.com/)
+
+### 🛠️ **Backend**
+- **GitHub:** [proyecto7 (backend)](https://github.com/Alexis5900/proyecto7)
+- **Render (producción):** [https://proyecto7-0wl1.onrender.com/](https://proyecto7-0wl1.onrender.com/)
+
+### 📄 **Documentación Swagger (API)**
+- [https://proyecto7-0wl1.onrender.com/api-docs](https://proyecto7-0wl1.onrender.com/api-docs)
+
+---
+
 ## 🚀 Instalación y ejecución
 
 ```bash
@@ -36,8 +51,36 @@ El frontend consume la API backend (Node.js + Express + MongoDB) para autenticac
 **La API está documentada con Swagger UI (OpenAPI):**
 
 - Accede a la documentación interactiva en producción:
-  - [https://<tu-backend>.onrender.com/api-docs](https://<tu-backend>.onrender.com/api-docs)
+  - [https://proyecto7-0wl1.onrender.com/api-docs](https://proyecto7-0wl1.onrender.com/api-docs)
 - Puedes probar todos los endpoints, ver los parámetros y respuestas esperadas.
+
+---
+
+## 🧪 Pruebas rápidas con Postman
+
+Puedes probar la API directamente con Postman usando las siguientes URLs base:
+
+- **Producción:** `https://proyecto7-0wl1.onrender.com`
+- **Local:** `http://localhost:3005`
+
+### **Principales endpoints disponibles:**
+
+#### **Usuarios**
+- `POST /api/usuarios/registro` — Registrar usuario
+- `POST /api/usuarios/login` — Iniciar sesión
+- `GET /api/usuarios/verificar-usuario` — Verificar usuario autenticado (requiere token)
+- `POST /api/usuarios/recuperar-password` — Recuperar contraseña
+- `GET /api/usuarios/compras` — Historial de compras (requiere token)
+
+#### **Productos**
+- `GET /api/productos` — Listar productos
+- `POST /api/productos` — Crear producto
+- `DELETE /api/productos/{id}` — Eliminar producto
+
+#### **Checkout**
+- `POST /api/checkout/create-checkout-session` — Crear sesión de pago con Stripe
+
+Consulta la [documentación Swagger](https://proyecto7-0wl1.onrender.com/api-docs) para ver detalles de cada endpoint, parámetros y ejemplos de request/response.
 
 ---
 
@@ -46,10 +89,8 @@ El frontend consume la API backend (Node.js + Express + MongoDB) para autenticac
 Crea un archivo `.env` en la raíz del frontend con:
 
 ```
-VITE_BACKEND_URL=https://<tu-backend>.onrender.com
+VITE_BACKEND_URL=https://proyecto7-0wl1.onrender.com
 ```
-
-Reemplaza `<tu-backend>` por la URL real de tu backend desplegado.
 
 ---
 
