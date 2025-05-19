@@ -29,10 +29,27 @@ http://localhost:5173/
 
 ---
 
-## 🌐 Consumo de API
+## 🌐 Consumo de API y documentación
 
-El frontend consume la API backend (Node.js + Express + MongoDB) para autenticación, productos y compras.  
-Configura la URL del backend en los archivos de servicios o variables de entorno si es necesario.
+El frontend consume la API backend (Node.js + Express + MongoDB) para autenticación, productos y compras.
+
+**La API está documentada con Swagger UI (OpenAPI):**
+
+- Accede a la documentación interactiva en producción:
+  - [https://<tu-backend>.onrender.com/api-docs](https://<tu-backend>.onrender.com/api-docs)
+- Puedes probar todos los endpoints, ver los parámetros y respuestas esperadas.
+
+---
+
+## ⚙️ Variables de entorno necesarias
+
+Crea un archivo `.env` en la raíz del frontend con:
+
+```
+VITE_BACKEND_URL=https://<tu-backend>.onrender.com
+```
+
+Reemplaza `<tu-backend>` por la URL real de tu backend desplegado.
 
 ---
 
@@ -60,9 +77,7 @@ Puedes probar el flujo completo:
 ## 📝 Notas
 
 - Este frontend está pensado para funcionar junto al backend del mismo proyecto.
-- Las imágenes de ejemplo deben estar en `/public/img/`.
-- El sistema de pagos usa claves de prueba de Stripe.
-- El historial de compras es privado y solo visible para el usuario autenticado.
+- La documentación de la API está disponible y actualizada en `/api-docs` del backend.
 
 ---
 
