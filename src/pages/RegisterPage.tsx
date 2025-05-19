@@ -26,10 +26,27 @@ export default function RegisterPage() {
   const [showPassword, setShowPassword] = useState(false)
   const [showConfirmPassword, setShowConfirmPassword] = useState(false)
 
+  const validateEmail = (email: string) => {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    return re.test(email)
+  }
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setError("")
 
+    if (!name.trim()) {
+      setError("El nombre es obligatorio")
+      return
+    }
+    if (!validateEmail(email)) {
+      setError("El correo electrónico no tiene un formato válido.")
+      return
+    }
+    if (password.length < 6) {
+      setError("La contraseña debe tener al menos 6 caracteres.")
+      return
+    }
     if (password !== confirmPassword) {
       setError("Las contraseñas no coinciden")
       return
@@ -38,15 +55,20 @@ export default function RegisterPage() {
     setLoading(true)
 
     try {
-      // Simulación de registro
       await register(name, email, password)
       toast({
         title: "Registro exitoso",
         description: "Tu cuenta ha sido creada correctamente. Inicia sesión para continuar.",
       })
       navigate("/login")
-    } catch (err) {
-      setError("Error al registrar la cuenta. Por favor, inténtalo de nuevo.")
+    } catch (err: any) {
+      if (err instanceof Error && err.message) {
+        setError(err.message)
+      } else if (typeof err === 'string') {
+        setError(err)
+      } else {
+        setError("Error desconocido al registrar la cuenta.")
+      }
     } finally {
       setLoading(false)
     }
