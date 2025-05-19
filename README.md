@@ -134,7 +134,43 @@ Puedes probar el flujo completo:
 
 ## 📷 Capturas de ejemplo
 
-_Agrega aquí capturas de pantalla de la app funcionando si lo deseas._
+A continuación se muestran capturas reales del flujo de la aplicación y pruebas realizadas:
+
+### 1. Poblar productos (Postman)
+![Poblar productos en Postman](public/images/1_PoblarProductos_Postman.png)
+
+### 2. Poblar productos (Frontend)
+![Poblar productos desde el frontend](public/images/1_PoblarProductos.png)
+
+### 3. Pantalla de inicio
+![Inicio](public/images/2_Inicio.png)
+
+### 4. Catálogo de pizzas
+![Catálogo de pizzas](public/images/2_CatalogoPizza.png)
+
+### 5. Creación de cuenta
+![Creación de cuenta](public/images/3_CreacionDeCuenta.png)
+
+### 6. Inicio de sesión
+![Inicio de sesión](public/images/3_InicioSesion.png)
+
+### 7. Agregar pizza al carrito de compra
+![Pizza al carrito de compra](public/images/4_PizzaAlCarritoDeCompra.png)
+
+### 8. Datos de contacto para la compra
+![Datos de contacto compra](public/images/4_DatosDeContactoCompra.png)
+
+### 9. Datos de pago
+![Datos de pago](public/images/5_DatosDePago.png)
+
+### 10. Pago finalizado
+![Pago finalizado](public/images/6_PagoFinalizado.png)
+
+### 11. Mi historial de compras
+![Mi historial de compras](public/images/7_MiHistorialDeCompras.png)
+
+### 12. Información personal
+![Información personal](public/images/8_InformacionPersonal.png)
 
 ---
 
