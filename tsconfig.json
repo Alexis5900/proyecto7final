@@ -29,6 +29,8 @@
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }],
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "test": "...",
+    "lint": "eslint ."
   }
 }
