@@ -33,7 +33,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       }
 
       try {
-        const res = await fetch("http://localhost:3005/api/usuarios/verificar-usuario", {
+        const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/usuarios/verificar-usuario`, {
           headers: {
             "x-auth-token": token
           }
@@ -65,7 +65,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }, [])
 
   const login = async (email: string, password: string) => {
-    const res = await fetch("http://localhost:3005/api/usuarios/login", {
+    const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/usuarios/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -94,7 +94,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }
 
   const register = async (name: string, email: string, password: string) => {
-    const res = await fetch("http://localhost:3005/api/usuarios/registro", {
+    const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/usuarios/registro`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"

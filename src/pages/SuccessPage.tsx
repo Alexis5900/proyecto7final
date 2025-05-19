@@ -13,7 +13,7 @@ export default function SuccessPage() {
       setError("")
       try {
         const token = localStorage.getItem("token")
-        const res = await fetch("http://localhost:3005/api/usuarios/compras", {
+        const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/usuarios/compras`, {
           headers: {
             "x-auth-token": token || ""
           }

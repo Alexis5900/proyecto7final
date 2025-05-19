@@ -55,7 +55,7 @@ export default function CartPage() {
     setLoading(true)
     const token = localStorage.getItem("token")
     try {
-      const res = await fetch('http://localhost:3005/api/checkout/create-checkout-session', {
+      const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/checkout/create-checkout-session`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

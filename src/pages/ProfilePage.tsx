@@ -100,7 +100,7 @@ export default function ProfilePage() {
     if (!user) return
     setLoadingCompras(true)
     setErrorCompras("")
-    fetch("http://localhost:3005/api/usuarios/compras", {
+    fetch(`${import.meta.env.VITE_BACKEND_URL}/api/usuarios/compras`, {
       headers: {
         "x-auth-token": localStorage.getItem("token") || ""
       }

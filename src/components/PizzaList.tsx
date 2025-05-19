@@ -24,7 +24,7 @@ export default function PizzaList() {
   useEffect(() => {
     const fetchProductos = async () => {
       try {
-        const res = await fetch("http://localhost:3005/api/productos")
+        const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/productos`)
         const data = await res.json()
         setProductos(data)
       } catch (error) {
