@@ -75,10 +75,10 @@ export default function CartPage() {
         })
       }
     } catch (error) {
-      toast({
+    toast({
         title: "Error de red",
         description: "No se pudo conectar con el servidor.",
-      })
+    })
     } finally {
       setLoading(false)
       setShowContactModal(false)

@@ -188,13 +188,13 @@ export default function ProfilePage() {
                 <div className="space-y-2">
                   <Label htmlFor="currentPassword">Contraseña Actual</Label>
                   <div className="relative">
-                    <Input
-                      id="currentPassword"
+                  <Input
+                    id="currentPassword"
                       type={showCurrentPassword ? "text" : "password"}
-                      value={currentPassword}
-                      onChange={(e) => setCurrentPassword(e.target.value)}
-                      required
-                    />
+                    value={currentPassword}
+                    onChange={(e) => setCurrentPassword(e.target.value)}
+                    required
+                  />
                     <button
                       type="button"
                       aria-label={showCurrentPassword ? "Ocultar contraseña" : "Mostrar contraseña"}
@@ -209,13 +209,13 @@ export default function ProfilePage() {
                 <div className="space-y-2">
                   <Label htmlFor="newPassword">Nueva Contraseña</Label>
                   <div className="relative">
-                    <Input
-                      id="newPassword"
+                  <Input
+                    id="newPassword"
                       type={showNewPassword ? "text" : "password"}
-                      value={newPassword}
-                      onChange={(e) => setNewPassword(e.target.value)}
-                      required
-                    />
+                    value={newPassword}
+                    onChange={(e) => setNewPassword(e.target.value)}
+                    required
+                  />
                     <button
                       type="button"
                       aria-label={showNewPassword ? "Ocultar contraseña" : "Mostrar contraseña"}
@@ -230,13 +230,13 @@ export default function ProfilePage() {
                 <div className="space-y-2">
                   <Label htmlFor="confirmPassword">Confirmar Nueva Contraseña</Label>
                   <div className="relative">
-                    <Input
-                      id="confirmPassword"
+                  <Input
+                    id="confirmPassword"
                       type={showConfirmPassword ? "text" : "password"}
-                      value={confirmPassword}
-                      onChange={(e) => setConfirmPassword(e.target.value)}
-                      required
-                    />
+                    value={confirmPassword}
+                    onChange={(e) => setConfirmPassword(e.target.value)}
+                    required
+                  />
                     <button
                       type="button"
                       aria-label={showConfirmPassword ? "Ocultar contraseña" : "Mostrar contraseña"}

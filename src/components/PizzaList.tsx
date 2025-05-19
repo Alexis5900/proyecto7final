@@ -93,13 +93,13 @@ export default function PizzaList() {
           }}
         />
       )}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {productos.map((producto) => (
-          <Card key={producto._id}>
-            <CardHeader>
-              <CardTitle>{producto.nombre}</CardTitle>
-            </CardHeader>
-            <CardContent>
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {productos.map((producto) => (
+        <Card key={producto._id}>
+          <CardHeader>
+            <CardTitle>{producto.nombre}</CardTitle>
+          </CardHeader>
+          <CardContent>
               <img
                 src={producto.imagen}
                 alt={producto.nombre}
@@ -111,23 +111,23 @@ export default function PizzaList() {
                 }}
               />
               <p>{producto.descripcion}</p>
-              <p className="text-gray-700 text-lg font-semibold">${producto.precio}</p>
-            </CardContent>
-            <CardFooter>
+            <p className="text-gray-700 text-lg font-semibold">${producto.precio}</p>
+          </CardContent>
+          <CardFooter>
               <div className="relative w-full">
                 <Button
                   onClick={() => handleAddToCart(producto)}
                   className="bg-red-600 hover:bg-red-700 w-full"
                   disabled={animating}
                 >
-                  Agregar al carrito
-                </Button>
+              Agregar al carrito
+            </Button>
                 {error && <div className="text-red-600 text-xs mt-2">{error}</div>}
               </div>
-            </CardFooter>
-          </Card>
-        ))}
-      </div>
+          </CardFooter>
+        </Card>
+      ))}
+    </div>
     </>
   )
 }

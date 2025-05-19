@@ -1,6 +1,6 @@
-# PROYECTO 7: Frontend eCommerce Pizzería
+# 🍕 PROYECTO 7: Aplicación Fullstack de Comercio Electrónico (Pizzería)
 
-Este proyecto es el frontend de una aplicación fullstack de eCommerce para una pizzería, desarrollado con React + Vite. Permite a los usuarios explorar el menú, gestionar su carrito, registrarse, iniciar sesión, ver su perfil, historial de compras y realizar pagos de prueba con Stripe.
+Bienvenido al proyecto final del Bootcamp UDD: una aplicación eCommerce de pizzas desarrollada con **React + Vite** (frontend) y **Node.js + Express + MongoDB** (backend). Incluye autenticación, carrito, pagos con Stripe, historial de compras y despliegue profesional.
 
 ---
 
@@ -8,50 +8,71 @@ Este proyecto es el frontend de una aplicación fullstack de eCommerce para una 
 
 ### 🚀 **Frontend**
 - **GitHub:** [proyecto7final (frontend)](https://github.com/Alexis5900/proyecto7final)
-- **Render (producción):** [https://proyecto7final.onrender.com/](https://proyecto7final.onrender.com/)
+- **Demo en Render:** [https://proyecto7final.onrender.com/](https://proyecto7final.onrender.com/)
 
 ### 🛠️ **Backend**
 - **GitHub:** [proyecto7 (backend)](https://github.com/Alexis5900/proyecto7)
-- **Render (producción):** [https://proyecto7-0wl1.onrender.com/](https://proyecto7-0wl1.onrender.com/)
+- **Demo en Render:** [https://proyecto7-0wl1.onrender.com/](https://proyecto7-0wl1.onrender.com/)
 
 ### 📄 **Documentación Swagger (API)**
 - [https://proyecto7-0wl1.onrender.com/api-docs](https://proyecto7-0wl1.onrender.com/api-docs)
 
 ---
 
-## 🚀 Instalación y ejecución
+## 📖 Descripción
+
+Esta aplicación permite a los usuarios:
+- Explorar un catálogo de pizzas dinámico.
+- Agregar productos al carrito con animaciones y feedback visual.
+- Registrarse, iniciar sesión y recuperar contraseña.
+- Realizar pagos de prueba con Stripe.
+- Ver historial de compras y editar su perfil.
+- Navegar de forma fluida gracias a React Router y un diseño profesional.
+
+---
+
+## 🚀 Instalación y ejecución local
 
 ```bash
+# Clona el repositorio frontend
+git clone https://github.com/Alexis5900/proyecto7final.git
+cd proyecto7final
 npm install
 npm run dev
 ```
 
-La app estará disponible en:  
-http://localhost:5173/
+La app estará disponible en: [http://localhost:5173/](http://localhost:5173/)
+
+---
+
+## ⚙️ Variables de entorno necesarias
+
+Crea un archivo `.env` en la raíz del frontend con:
+
+```
+VITE_BACKEND_URL=https://proyecto7-0wl1.onrender.com
+```
 
 ---
 
 ## 🧩 Funcionalidades principales
 
-- Registro y login de usuarios (con feedback visual y validaciones)
-- Gestión de perfil (nombre, email, teléfono, dirección, cambio de contraseña)
-- Catálogo de pizzas destacado y menú completo
+- Catálogo de productos dinámico desde la base de datos
 - Carrito de compras con animaciones y feedback
-- Integración con Stripe para pagos de prueba
-- Historial de compras privado en el perfil
+- Registro, login, perfil, historial de compras
+- Integración real con Stripe
 - Recuperación de contraseña vía email de prueba (Ethereal)
-- Navegación clara y profesional
+- Rutas protegidas y validaciones
+- Documentación Swagger para la API
+- Despliegue profesional en Render
 
 ---
 
 ## 🌐 Consumo de API y documentación
 
-El frontend consume la API backend (Node.js + Express + MongoDB) para autenticación, productos y compras.
+El frontend consume la API backend para autenticación, productos y compras.
 
-**La API está documentada con Swagger UI (OpenAPI):**
-
-- Accede a la documentación interactiva en producción:
-  - [https://proyecto7-0wl1.onrender.com/api-docs](https://proyecto7-0wl1.onrender.com/api-docs)
+- **Documentación Swagger:** [https://proyecto7-0wl1.onrender.com/api-docs](https://proyecto7-0wl1.onrender.com/api-docs)
 - Puedes probar todos los endpoints, ver los parámetros y respuestas esperadas.
 
 ---
@@ -65,32 +86,19 @@ Puedes probar la API directamente con Postman usando las siguientes URLs base:
 
 ### **Principales endpoints disponibles:**
 
-#### **Usuarios**
-- `POST /api/usuarios/registro` — Registrar usuario
-- `POST /api/usuarios/login` — Iniciar sesión
-- `GET /api/usuarios/verificar-usuario` — Verificar usuario autenticado (requiere token)
-- `POST /api/usuarios/recuperar-password` — Recuperar contraseña
-- `GET /api/usuarios/compras` — Historial de compras (requiere token)
-
-#### **Productos**
-- `GET /api/productos` — Listar productos
-- `POST /api/productos` — Crear producto
-- `DELETE /api/productos/{id}` — Eliminar producto
-
-#### **Checkout**
-- `POST /api/checkout/create-checkout-session` — Crear sesión de pago con Stripe
+| Método | Endpoint                                 | Descripción                                 |
+|--------|------------------------------------------|---------------------------------------------|
+| POST   | /api/usuarios/registro                   | Registrar usuario                           |
+| POST   | /api/usuarios/login                      | Iniciar sesión                              |
+| GET    | /api/usuarios/verificar-usuario          | Verificar usuario autenticado (token)       |
+| POST   | /api/usuarios/recuperar-password         | Recuperar contraseña                        |
+| GET    | /api/usuarios/compras                    | Historial de compras (token)                |
+| GET    | /api/productos                           | Listar productos                            |
+| POST   | /api/productos                           | Crear producto                              |
+| DELETE | /api/productos/{id}                      | Eliminar producto                           |
+| POST   | /api/checkout/create-checkout-session    | Crear sesión de pago con Stripe             |
 
 Consulta la [documentación Swagger](https://proyecto7-0wl1.onrender.com/api-docs) para ver detalles de cada endpoint, parámetros y ejemplos de request/response.
-
----
-
-## ⚙️ Variables de entorno necesarias
-
-Crea un archivo `.env` en la raíz del frontend con:
-
-```
-VITE_BACKEND_URL=https://proyecto7-0wl1.onrender.com
-```
 
 ---
 
@@ -115,10 +123,12 @@ Puedes probar el flujo completo:
 
 ---
 
-## 📝 Notas
+## 📝 Notas y buenas prácticas
 
 - Este frontend está pensado para funcionar junto al backend del mismo proyecto.
 - La documentación de la API está disponible y actualizada en `/api-docs` del backend.
+- No subas la carpeta `dist/` al repositorio (ya está en `.gitignore`).
+- Si tienes problemas con rutas internas en producción, revisa la configuración de rewrites en Render.
 
 ---
 
@@ -126,4 +136,10 @@ Puedes probar el flujo completo:
 
 _Agrega aquí capturas de pantalla de la app funcionando si lo deseas._
 
---- 
+---
+
+## 🆘 ¿Dudas o problemas?
+
+- Revisa la documentación Swagger y este README.
+- Si encuentras un bug, abre un issue en el repositorio de GitHub.
+- ¡Disfruta tu pizza y tu código! 🍕🚀 
