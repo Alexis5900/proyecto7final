@@ -4,17 +4,39 @@ import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 import { Button } from "./ui/button"
 import { Card, CardContent, CardFooter, CardTitle } from "./ui/card"
-import { pizzaData, type Pizza } from "../data/pizza-data"
+
+type Producto = {
+  _id: string
+  nombre: string
+  descripcion: string
+  precio: number
+  imagen: string
+}
 
 export default function FeaturedPizzas() {
-  const [mounted, setMounted] = useState(false)
-  const featuredPizzas = pizzaData.slice(0, 3)
+  const [productos, setProductos] = useState<Producto[]>([])
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState("")
 
   useEffect(() => {
-    setMounted(true)
+    const fetchProductos = async () => {
+      setLoading(true)
+      setError("")
+      try {
+        const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/productos`)
+        const data = await res.json()
+        setProductos(data.slice(0, 3)) // Solo los primeros 3
+      } catch (err) {
+        setError("No se pudieron cargar las pizzas destacadas.")
+      } finally {
+        setLoading(false)
+      }
+    }
+    fetchProductos()
   }, [])
 
-  if (!mounted) return null
+  if (loading) return <div className="text-center py-8">Cargando pizzas destacadas...</div>
+  if (error) return <div className="text-center text-red-600 py-8">{error}</div>
 
   return (
     <section className="w-full py-12 md:py-24">
@@ -28,19 +50,19 @@ export default function FeaturedPizzas() {
           </div>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
-          {featuredPizzas.map((pizza: Pizza) => (
-            <Card key={pizza.id} className="overflow-hidden">
+          {productos.map((pizza) => (
+            <Card key={pizza._id} className="overflow-hidden">
               <div className="relative h-48 w-full">
                 <img
-                  src={pizza.image || "/placeholder.svg"}
-                  alt={pizza.name}
+                  src={pizza.imagen || "/placeholder.svg"}
+                  alt={pizza.nombre}
                   className="absolute inset-0 w-full h-full object-cover"
                 />
               </div>
               <CardContent className="p-4">
-                <CardTitle className="text-xl mb-2">{pizza.name}</CardTitle>
-                <p className="text-gray-500 text-sm mb-2">{pizza.description}</p>
-                <p className="font-bold text-lg">${pizza.price.toFixed(2)}</p>
+                <CardTitle className="text-xl mb-2">{pizza.nombre}</CardTitle>
+                <p className="text-gray-500 text-sm mb-2">{pizza.descripcion}</p>
+                <p className="font-bold text-lg">${pizza.precio.toFixed(2)}</p>
               </CardContent>
               <CardFooter className="p-4 pt-0">
                 <Link to="/menu" className="w-full">
