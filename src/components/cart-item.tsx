@@ -3,7 +3,7 @@
 import { Minus, Plus, Trash2 } from "lucide-react"
 
 import { Button } from "./ui/button"
-import { useCart } from "../context/cart-provider"
+import { useCart } from "../context/CartContext"
 
 type CartItemProps = {
   item: {

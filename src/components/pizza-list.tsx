@@ -5,7 +5,7 @@ import { Plus } from "lucide-react"
 
 import { Button } from "./ui/button"
 import { Card, CardContent, CardFooter, CardTitle } from "./ui/card"
-import { useCart } from "../context/cart-provider"
+import { useCart } from "../context/CartContext"
 import { pizzaData } from "../data/pizza-data"
 import { useToast } from "../hooks/use-toast"
 
